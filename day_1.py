@@ -1,3 +1,5 @@
+import AoC_Lib
+
 def parse_input(day):
     lines = []
     with open(f"C://Users//Jim//Coding//AoC_2023//day_{day}.txt", "r") as f:
@@ -80,7 +82,7 @@ def part_two(lines):
         
 
 def main():
-    lines = parse_input(1)
+    lines = AoC_Lib.parse_input(1)
     # print(part_one(lines))
     print(part_two(lines))
 
