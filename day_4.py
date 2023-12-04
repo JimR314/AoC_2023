@@ -3,7 +3,6 @@ import AoC_Lib
 def part_one(lines):
     total_points = 0
     for line in lines:
-        # Splitting the line at the colon and using the second part
         _, card_data = line.split(": ")
         winning_numbers, my_numbers = card_data.split(" | ")
         winning_numbers = set(map(int, winning_numbers.split()))
@@ -11,19 +10,15 @@ def part_one(lines):
 
         matches = sum(num in winning_numbers for num in my_numbers)
         if matches > 0:
-            points = 2 ** (matches - 1)  # 1 point for the first, double for each additional
+            points = 2 ** (matches - 1)
             total_points += points
 
     return total_points
 
-# Rest of the code remains the same
-
 
 def part_two(lines):
     original_cards = parse_cards(lines)
-    card_instances = [1] * len(original_cards)  # Start with 1 instance of each card
-
-    # Process each card, including copies
+    card_instances = [1] * len(original_cards)
     for i, card in enumerate(original_cards):
         matches = sum(num in card['winning_numbers'] for num in card['my_numbers'])
         for j in range(1, matches + 1):
