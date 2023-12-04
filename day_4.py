@@ -38,9 +38,12 @@ def parse_cards(lines):
     return cards
 
 def main():
-    lines = AoC_Lib.parse_input(4)
-    print(part_one(lines))
-    print(part_two(lines))
+    sample_input = AoC_Lib.parse_input(4, False)
+    my_input = AoC_Lib.parse_input(4, True)
+    print(f"Sample input, part one: {part_one(sample_input)}")
+    print(f"Sample input, part two: {part_two(sample_input)}")
+    print(f"My input, part one: {part_one(my_input)}")
+    print(f"My input, part one: {part_two(my_input)}")
 
 if __name__ == '__main__':
     main()
