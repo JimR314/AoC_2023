@@ -81,10 +81,6 @@ def part_two(lines):
 
     final_locations = [(start, length) for start, length in seed_ranges]
 
-    zero_start_tuples = [tup for tup in final_locations if tup[0] == 0]
-    if zero_start_tuples:
-        print("Tuples with start value 0:", zero_start_tuples)
-
     return min(final_locations, key=lambda x: x[0])[0]
 
 def main():
